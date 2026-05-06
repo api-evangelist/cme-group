@@ -4,160 +4,120 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: CME Group
 providerId: cme-group
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Capital Markets
   - Derivatives
   - Exchange
-  - Financial Markets
-  - Futures
   - Market Data
+  - Futures
   - Options
-  - Reference Data
-  - Trading
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+notes: CME Group sells market data, reference data, historical data, and connectivity through a structured
+  vendor / distributor / direct-customer licensing program (CME DataMine, MDP 3.0 market-data feed, iLink,
+  Market Reporting, Smart Stream). Fee schedules exist but require completion of vendor / subscriber license
+  agreements and are published as PDFs on cmegroup.com under each program. The structural plans below preserve
+  the API Commons structure; specific dollar fees should be reconciled against the relevant CME fee schedule
+  PDF.
+description: 'CME Group monetizes market data and connectivity through several program lines: real-time
+  market data via MDP 3.0 (vendor / distributor / direct-subscriber fees), CME DataMine for historical
+  / reference data, iLink for order routing, and Smart Stream / STP services. Fees vary by professional
+  vs non-professional, derived vs non-display, internal vs external distribution. Public pricing is published
+  as PDF fee schedules per program rather than a single pricing page.'
+sources:
+  - https://www.cmegroup.com/market-data/distributors-and-vendors.html
+  - https://www.cmegroup.com/market-data.html
+  - https://www.cmegroup.com/market-data/datamine.html
 plans:
-  - id: cme-group-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the CME Group API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: CME Reference Data API
-      - name: Real-Time Futures and Options Data API
-      - name: CME Term SOFR API
-      - name: CME FedWatch API
-      - name: Greeks and Implied Volatility API
-      - name: EUR/USD Cross Currency Basis Index API
-      - name: CME ClearPort API
-  - id: cme-group-pro
-    name: Professional
-    type: paid
-    description: Production tier for CME Group. Provides higher quotas, priority support, and access to
-      the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: CME Reference Data API
-      - name: Real-Time Futures and Options Data API
-      - name: CME Term SOFR API
-      - name: CME FedWatch API
-      - name: Greeks and Implied Volatility API
-      - name: EUR/USD Cross Currency Basis Index API
-      - name: CME ClearPort API
-  - id: cme-group-enterprise
-    name: Enterprise
+  - id: cme-group-market-data-vendor
+    name: Market Data — Distributor / Vendor
     type: enterprise
-    description: Custom-negotiated tier for CME Group. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
+    description: Real-time market data redistributed by an authorized vendor. Subscriber and non-display
+      fees apply; see the CME Market Data Fee Schedule.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Vendor / distributor license
+        name: vendor_license
+        type: subscription
+        metric: month
         limit: -1
         timeFrame: month
-        geo: configurable
-        domains: []
+        geo: global
         unit: 1
-        price: custom
+        price: see CME Market Data Fee Schedule
         userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains: []
+      - label: Professional subscriber fee
+        name: professional_subscriber
+        type: subscription
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
         unit: 1
-        price: custom
+        price: see CME Market Data Fee Schedule
+        userMultiplied: true
+      - label: Non-professional subscriber fee
+        name: non_professional_subscriber
+        type: subscription
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: see CME Market Data Fee Schedule
+        userMultiplied: true
+      - label: Non-display / derived data fee
+        name: non_display_fee
+        type: subscription
+        metric: license
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: see CME Market Data Fee Schedule
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: CME Reference Data API
-      - name: Real-Time Futures and Options Data API
-      - name: CME Term SOFR API
-      - name: CME FedWatch API
-      - name: Greeks and Implied Volatility API
-      - name: EUR/USD Cross Currency Basis Index API
-      - name: CME ClearPort API
+      - name: MDP 3.0 real-time market data
+      - name: Vendor agreement required
+      - name: Subscriber reporting (monthly)
+  - id: cme-group-datamine
+    name: CME DataMine
+    type: usage-based
+    description: Historical and reference data on demand via CME DataMine.
+    entries:
+      - label: Dataset purchase
+        name: dataset_purchase
+        type: metered
+        metric: dataset
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: see https://www.cmegroup.com/market-data/datamine.html
+        userMultiplied: false
+    elements:
+      - name: Historical tick / book data
+      - name: Reference data
+      - name: Settlement data
+  - id: cme-group-ilink-connectivity
+    name: iLink Connectivity
+    type: enterprise
+    description: Order-routing connectivity to CME Globex via iLink. Fees apply per session / port; see
+      the iLink fee schedule.
+    entries:
+      - label: iLink session
+        name: ilink_session
+        type: subscription
+        metric: session
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: see CME iLink Fee Schedule
+        userMultiplied: false
+    elements:
+      - name: Globex order routing
+      - name: Session-level connectivity
+      - name: Co-location options (additional fees)
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

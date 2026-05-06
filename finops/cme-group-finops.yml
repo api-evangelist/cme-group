@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,184 +9,92 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: CME Group
 providerId: cme-group
-publisherName: CME Group
-serviceCategory: API
+publisherName: Chicago Mercantile Exchange Inc.
+serviceCategory: Market Data / Exchange Connectivity
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
-  - Capital Markets
-  - Derivatives
-  - Exchange
-  - Financial Markets
-  - Futures
-  - Market Data
-  - Options
-  - Reference Data
-  - Trading
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the CME Group API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+  - Capital Markets
+  - Market Data
+  - Derivatives
+notes: CME Group invoices market-data customers under fee schedules tied to subscriber counts (professional
+  / non-professional), distribution model (display / non-display / derived), and session count for iLink.
+  Specific dollar amounts come from PDF fee schedules per program; the meters below capture the typical
+  billing surface but are not reconciled against a particular invoice.
+description: 'FOCUS-aligned FinOps for CME Group market data and connectivity: monthly subscriber-based
+  billing for market data (MDP 3.0), per-dataset purchases for CME DataMine, and per-session billing for
+  iLink connectivity. Subscriber reporting and audit obligations apply to market-data licensees.'
+sources:
+  - https://www.cmegroup.com/market-data/distributors-and-vendors.html
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Tiered Subscription + Usage
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
+    - Usage
     - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: CME Group
-  ServiceCategory: Developer Tools / API
+  ServiceName: CME Group Market Data
+  ServiceCategory: Market Data / Exchange Connectivity
   ProviderName: CME Group
-  PublisherName: CME Group
-  InvoiceIssuerName: CME Group
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Chicago Mercantile Exchange Inc.
+  InvoiceIssuerName: Chicago Mercantile Exchange Inc.
+  PricingCategory: Tiered Subscription
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: professional_subscribers
+    description: Count of professional market-data subscribers for the period.
+    unit: seat-month
+    aggregation: max
+    dimensions:
+      - product
+      - distribution_model
+  - name: non_professional_subscribers
+    description: Count of non-professional market-data subscribers for the period.
+    unit: seat-month
+    aggregation: max
+    dimensions:
+      - product
+      - distribution_model
+  - name: non_display_licenses
+    description: Non-display / derived data licenses.
+    unit: license-month
+    aggregation: max
+    dimensions:
+      - product
+      - business_unit
+  - name: ilink_sessions
+    description: iLink order-entry sessions allocated.
+    unit: session-month
+    aggregation: max
+    dimensions:
+      - environment
+  - name: datamine_purchases
+    description: One-time CME DataMine dataset purchases.
+    unit: dataset
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: CME Reference Data API
-    baseURL: ''
-    tags:
-      - Instruments
-      - OAuth
-      - Products
-      - Reference Data
-      - REST
-    serviceName: CME Reference Data API
-    serviceCategory: API
-  - name: Real-Time Futures and Options Data API
-    baseURL: ''
-    tags:
-      - Futures
-      - Market Data
-      - Options
-      - Real-Time
-      - REST
-    serviceName: Real-Time Futures and Options Data API
-    serviceCategory: API
-  - name: CME Term SOFR API
-    baseURL: ''
-    tags:
-      - Benchmarks
-      - Interest Rates
-      - REST
-      - SOFR
-    serviceName: CME Term SOFR API
-    serviceCategory: API
-  - name: CME FedWatch API
-    baseURL: ''
-    tags:
-      - Fed Funds
-      - Market-Implied Probabilities
-      - Monetary Policy
-      - REST
-    serviceName: CME FedWatch API
-    serviceCategory: API
-  - name: Greeks and Implied Volatility API
-    baseURL: ''
-    tags:
-      - Greeks
-      - Implied Volatility
-      - Options
-      - REST
-    serviceName: Greeks and Implied Volatility API
-    serviceCategory: API
-  - name: EUR/USD Cross Currency Basis Index API
-    baseURL: ''
-    tags:
-      - FX
-      - Index
-      - REST
-    serviceName: EUR/USD Cross Currency Basis Index API
-    serviceCategory: API
-  - name: CME ClearPort API
-    baseURL: ''
-    tags:
-      - Clearing
-      - OTC
-      - Trade Submission
-    serviceName: CME ClearPort API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - dataset
+      - product
+principles:
+  - name: Visibility
+    description: CME requires monthly subscriber reporting from vendors / distributors; reconcile internal
+      entitlement systems against the report submitted to CME.
+  - name: Allocation
+    description: Allocate market-data fees to the trading desk or research team consuming the feed; allocate
+      iLink session fees to the order-routing application.
+  - name: Optimization
+    description: Audit professional vs non-professional classifications, sunset orphan iLink sessions,
+      and consolidate distribution agreements to take advantage of enterprise-licensing terms.
+  - name: Accountability
+    description: Assign a market-data administrator accountable for monthly reporting accuracy; CME audits
+      can result in retroactive fees if subscriber counts are under-reported.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
