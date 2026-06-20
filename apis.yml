@@ -14,7 +14,7 @@ tags:
   - Trading
   - Fortune 1000
 type: Index
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2026-03-23'
 modified: '2026-04-23'
@@ -37,7 +37,7 @@ apis:
       - Products
       - Reference Data
       - REST
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/trading/market-tech-and-data-services/cme-reference-data-api.html
     properties:
       - url: https://www.cmegroup.com/trading/market-tech-and-data-services/cme-reference-data-api.html
@@ -76,7 +76,7 @@ apis:
       - Options
       - Real-Time
       - REST
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/real-time-futures-and-options-data-api.html
     properties:
       - url: https://www.cmegroup.com/market-data/real-time-futures-and-options-data-api.html
@@ -106,7 +106,7 @@ apis:
       - Interest Rates
       - REST
       - SOFR
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html
     properties:
       - url: https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html
@@ -134,7 +134,7 @@ apis:
       - Market-Implied Probabilities
       - Monetary Policy
       - REST
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html
     properties:
       - url: https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html
@@ -162,7 +162,7 @@ apis:
       - Implied Volatility
       - Options
       - REST
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/market-data-api.html
     properties:
       - url: https://www.cmegroup.com/market-data/market-data-api.html
@@ -187,7 +187,7 @@ apis:
       - FX
       - Index
       - REST
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/market-data-api.html
     properties:
       - url: https://www.cmegroup.com/market-data/market-data-api.html
@@ -209,7 +209,7 @@ apis:
       - Clearing
       - OTC
       - Trade Submission
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/clearport/clearport-api.html
     properties:
       - url: https://www.cmegroup.com/clearport/clearport-api.html
