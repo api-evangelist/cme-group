@@ -227,6 +227,8 @@ apis:
       - name: Broker Workflow Automation
         description: Automate trade-capture-to-clearing workflows for OTC products.
 common:
+  - type: DomainSecurity
+    url: security/cme-group-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/cmegroup
   - url: https://www.cmegroup.com
