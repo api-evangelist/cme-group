@@ -3,10 +3,9 @@
   "feeds": [
     {
       "source": "https://www.cmegroup.com/openmarkets.html",
-      "saved": 0,
-      "error": "fetch timeout / socket hang up"
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-27T12:33:12Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 0
 }
