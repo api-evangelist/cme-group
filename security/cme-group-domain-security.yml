@@ -1,4 +1,4 @@
-generated: '2026-07-11'
+generated: '2026-07-22'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
@@ -12,7 +12,12 @@ hosts:
   tls_version: TLSv1.3
   cert_expires: Jan 22 23:59:59 2027 GMT
   hsts: true
-  hsts_max_age: 31536000
+  hsts_max_age: 86400
+- host: refdata.api.cmegroup.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  9 20:12:51 2026 GMT
+  hsts: null
 domains:
 - domain: cmegroup.com
   dnssec: true

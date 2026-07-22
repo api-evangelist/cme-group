@@ -1,0 +1,42 @@
+generated: '2026-07-22'
+method: searched
+source: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457215780/CME+Reference+Data+API+Version+3
+format: custom
+notes: >-
+  CME Group's cloud REST APIs do not use RFC 9457 problem+json. Errors are
+  returned as a JSON errorResponse envelope (observed live on
+  markets.api.cmegroup.com) with code, message, fault name, reason, and error
+  detail fields. Status semantics below are from the published Reference Data
+  API v3 documentation and the OAuth 2.0 adoption guide.
+envelope:
+  field: errorResponse
+  fields: [code, message, "fault name", reason, "error detail"]
+  example_observed: >-
+    401 {"errorResponse": {"code": "401", "message": "api key or token is
+    invalid", "fault name": "FailedToResolveVariable", "reason":
+    "Unauthorized", "error detail": "Failed to Resolve Variable "}}
+problems:
+  - status: 200
+    title: OK
+    detail: An empty result set with a 200 code indicates a successful query that returned no results.
+  - status: 400
+    title: Bad Request
+    detail: Request was missing required information or was malformed. On the OAuth token endpoint, returned for incorrect grant_type, missing/incorrect Content-Type, or invalid/incorrectly encoded credentials.
+    remediation: Check required parameters, encoding of special characters (/ %2F, # %23, \ %5C, < %3C, > %3E, space %20), and OAuth token request formatting.
+  - status: 401
+    title: Unauthorized
+    detail: Request requires user authentication. Causes include failed token decode, expired token, no entitlement for the JWT token, or invalid API key/token (FailedToResolveVariable).
+    remediation: Obtain a fresh OAuth access token (about one hour lifetime) and confirm the API ID is entitled to the API.
+  - status: 403
+    title: Forbidden
+    detail: Returned when the particular HTTPS method is not allowed (e.g. POST, PATCH, PUT, DELETE on read-only endpoints).
+  - status: 404
+    title: Not Found
+    detail: Requested item not found.
+  - status: 502
+    title: Bad Gateway (result too large)
+    detail: Reference Data API queries returning more than 10MB fail with 502 even within the 2,000-record page maximum.
+    remediation: Resubmit the request with a reduced size parameter.
+  - status: 5xx
+    title: Server Error
+    detail: There is a server error on the CME Group side.

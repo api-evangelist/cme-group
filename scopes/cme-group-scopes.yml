@@ -1,0 +1,40 @@
+generated: '2026-07-22'
+method: searched
+source: https://auth.cmegroup.com/.well-known/oauth-authorization-server
+docs: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457316022/Client+API+Service+Adoption+Using+OAuth+2.0+Protocol
+notes: >-
+  CME Group authorization is primarily entitlement-based (per-API-ID
+  entitlements managed in the CME Customer Center), not scope-based. The
+  PingFederate authorization server at auth.cmegroup.com advertises the scopes
+  below in its anonymous RFC 8414 metadata; API access itself is granted by
+  entitling the OAuth API ID to each API rather than by requesting granular
+  scopes. No public OpenAPI declares oauth2 scopes.
+schemes:
+  - name: CMEGroupOAuth
+    source: well-known/cme-group-oauth-authorization-server.json
+    flows:
+      - flow: clientCredentials
+        tokenUrl: https://auth.cmegroup.com/as/token.oauth2
+      - flow: clientCredentials
+        tokenUrl: https://authnr.cmegroup.com/as/token.oauth2
+scopes:
+  - scope: UNOEntitlement
+    description: CME Group entitlement scope advertised by the authorization server (RFC 8414 scopes_supported).
+    flows: [clientCredentials]
+    sources: [well-known/cme-group-oauth-authorization-server.json]
+  - scope: openid
+    description: OpenID Connect authentication scope.
+    flows: [authorizationCode]
+    sources: [well-known/cme-group-openid-configuration.json]
+  - scope: profile
+    description: OpenID Connect profile claims.
+    flows: [authorizationCode]
+    sources: [well-known/cme-group-openid-configuration.json]
+  - scope: email
+    description: OpenID Connect email claim.
+    flows: [authorizationCode]
+    sources: [well-known/cme-group-openid-configuration.json]
+  - scope: offline_access
+    description: Refresh-token issuance for long-lived access.
+    flows: [authorizationCode]
+    sources: [well-known/cme-group-openid-configuration.json]

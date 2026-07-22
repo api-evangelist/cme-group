@@ -1,0 +1,35 @@
+generated: '2026-07-22'
+method: searched
+source: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/871366660/CME+Options+Analytics+-+Greeks+and+Implied+Volatility+REST+API
+notes: >-
+  CME Group publishes per-API revision histories on the Client Systems Wiki
+  pages and dated operational notices on cmegroup.com/notices.html rather than
+  a single consolidated changelog. Recent dated entries captured below from
+  the wiki revision-history tables and notices.
+scheme: per-API revision history tables + dated CME Group notices
+entries:
+  - date: '2025-10-30'
+    api: Greeks and Implied Volatility REST API
+    type: additions
+    breaking: false
+    highlights:
+      - 'Updated parameters: Latest/History/Products header User-Agent; Latest body globexSym, impliedVolAsk, impliedVolBid; History body impliedVolAsk, impliedVolBid'
+  - date: '2025-11-01'
+    api: CME FedWatch Intraday API
+    type: milestone
+    breaking: false
+    highlights:
+      - Historical data for the FedWatch Intraday API commences on November 1, 2025
+  - date: '2025-08-01'
+    api: Greeks and Implied Volatility REST API
+    type: initial-release
+    breaking: false
+    highlights:
+      - Initial publication of the CME Options Analytics Greeks and Implied Volatility REST API
+  - date: '2024-05-02'
+    api: CME Reference Data API v3
+    type: operational
+    breaking: false
+    highlights:
+      - New CME Reference Data API Version 3 network connections notice
+    source: https://www.cmegroup.com/notices/reference-data-api/2024/05/20240502a.html

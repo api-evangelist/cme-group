@@ -1,0 +1,50 @@
+generated: '2026-07-22'
+method: searched
+source: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457215780/CME+Reference+Data+API+Version+3
+notes: >-
+  Lifecycle posture for CME Group's cloud market data APIs, captured from the
+  CME Group Client Systems Wiki and CME notices. No public status page was
+  found (status.cmegroup.com does not resolve); operational notices are
+  published as dated CME Group notices (e.g. Reference Data API notices) on
+  cmegroup.com. No formal deprecation policy or Sunset-header (RFC 8594)
+  support is documented.
+versioning:
+  scheme: uri-path
+  current:
+    reference-data: v3
+    fedwatch-eod: v1
+    fedwatch-intraday: v1
+    term-sofr: v1
+    greeks-implied-volatility: v1
+    cross-currency: v1
+  docs: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457215780/CME+Reference+Data+API+Version+3
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: Version transitions are communicated via dated CME Group notices (e.g. the May 2024 CME Reference Data API Version 3 network connections notice) rather than a published deprecation policy.
+sla:
+  url: null
+  availability:
+    - api: CME Reference Data API v3
+      hours: 24x7 with weekly maintenance Friday 10:00 p.m. CT to Saturday 7:00 p.m. CT
+    - api: CME FedWatch End-of-Day API
+      hours: 24x7; forecasts updated business days at 01:45 UTC
+    - api: CME FedWatch Intraday API
+      hours: Sunday-Friday 5:00 p.m.-4:00 p.m. CT (60-second frequency); daily maintenance Monday-Thursday 4:00-5:00 p.m. CT; history 24x7
+    - api: CME Term SOFR API
+      hours: 24x7; latest rates published around 10:00 AM UTC
+    - api: CME Cross Currency API
+      hours: 24x7; latest index published approximately 3:10 PM UTC Monday-Friday
+    - api: Greeks and Implied Volatility REST API
+      hours: 24x7; five-minute snapshots while options markets are open; data refreshed weekly (current trading week only)
+status_page: null
+notices: https://www.cmegroup.com/notices.html
+environments:
+  - name: New Release
+    purpose: testing and certification
+    refdata_base: https://refdata.api.uat.cmegroup.com/refdata/v3
+    oauth_token: https://authnr.cmegroup.com/as/token.oauth2
+  - name: Production
+    refdata_base: https://refdata.api.cmegroup.com/refdata/v3
+    oauth_token: https://auth.cmegroup.com/as/token.oauth2
+deprecated_operations: []

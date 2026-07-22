@@ -14,10 +14,10 @@ tags:
   - Trading
   - Fortune 1000
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cme-group.png
 access: 3rd-Party
 created: '2026-03-23'
-modified: '2026-04-23'
+modified: '2026-07-22'
 specificationVersion: '0.19'
 description: >-
   CME Group is the world's largest derivatives exchange and operator of the CME, CBOT,
@@ -39,6 +39,7 @@ apis:
       - REST
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/trading/market-tech-and-data-services/cme-reference-data-api.html
+    baseURL: https://refdata.api.cmegroup.com/refdata/v3
     properties:
       - url: https://www.cmegroup.com/trading/market-tech-and-data-services/cme-reference-data-api.html
         type: Documentation
@@ -108,6 +109,7 @@ apis:
       - SOFR
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html
+    baseURL: https://markets.api.cmegroup.com/term-sofr-rates/v1
     properties:
       - url: https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html
         type: Documentation
@@ -136,6 +138,7 @@ apis:
       - REST
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html
+    baseURL: https://markets.api.cmegroup.com/fedwatch/v1
     properties:
       - url: https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html
         type: Documentation
@@ -164,7 +167,10 @@ apis:
       - REST
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/market-data-api.html
+    baseURL: https://markets.api.cmegroup.com/greeks/v1
     properties:
+      - url: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/871366660
+        type: Reference
       - url: https://www.cmegroup.com/market-data/market-data-api.html
         type: Documentation
     description: >-
@@ -189,7 +195,10 @@ apis:
       - REST
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.cmegroup.com/market-data/market-data-api.html
+    baseURL: https://markets.api.cmegroup.com/xccy/v1
     properties:
+      - url: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457320601
+        type: Reference
       - url: https://www.cmegroup.com/market-data/market-data-api.html
         type: Documentation
     description: >-
@@ -230,7 +239,42 @@ common:
   - type: DomainSecurity
     url: security/cme-group-domain-security.yml
   - type: GitHubOrganization
-    url: https://github.com/cmegroup
+    url: https://github.com/CMEGroupPublic
+  - type: Packages
+    url: packages/cme-group-packages.yml
+  - type: SDKs
+    url: packages/cme-group-packages.yml
+  - type: WellKnown
+    url: well-known/cme-group-well-known.yml
+  - type: Authentication
+    url: authentication/cme-group-authentication.yml
+  - type: OAuthScopes
+    url: scopes/cme-group-scopes.yml
+  - type: ErrorCatalog
+    url: errors/cme-group-problem-types.yml
+  - type: Conventions
+    url: conventions/cme-group-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/cme-group-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/cme-group-changelog.yml
+  - type: Sandbox
+    url: sandbox/cme-group-sandbox.yml
+  - type: Conformance
+    url: conformance/cme-group-conformance.yml
+  - type: LLMsTxt
+    url: llms/cme-group-llms.txt
+  - type: VulnerabilityDisclosure
+    url: security/cme-group-vulnerability-disclosure.yml
+  - type: Security
+    url: https://hackerone.com/cmegroup
+    name: CME Group Vulnerability Disclosure Program (HackerOne)
+  - type: APIReference
+    url: https://cmegroupclientsite.atlassian.net/wiki/display/EPICSANDBOX
+    name: CME Group Client Systems Wiki API Reference
+  - type: SignUp
+    url: https://login.cmegroup.com/sso/register/
+    name: CME Group Login Registration
   - url: https://www.cmegroup.com
     name: CME Group Website
     type: Website

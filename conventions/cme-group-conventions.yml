@@ -1,0 +1,52 @@
+generated: '2026-07-22'
+method: searched
+source: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457215780/CME+Reference+Data+API+Version+3
+notes: >-
+  Cross-cutting request/response semantics for CME Group's cloud market data
+  REST APIs (Reference Data API v3, FedWatch End-of-Day and Intraday, Term
+  SOFR, Greeks and Implied Volatility, Cross Currency), captured from the CME
+  Group Client Systems Wiki. No idempotency-key contract is documented (the
+  public surface is read-only GET). Cross-links: authentication/, errors/,
+  lifecycle/, rate-limits/.
+authentication:
+  style: OAuth 2.0 client-credentials Bearer token
+  header: 'Authorization: Bearer <access_token>'
+  detail: authentication/cme-group-authentication.yml
+versioning:
+  scheme: uri-path
+  examples: [/refdata/v3, /fedwatch/v1, /fedwatch_rt/v1, /term-sofr-rates/v1, /greeks/v1, /xccy/v1]
+pagination:
+  style: page-number
+  request_params:
+    - name: size
+      description: Results per page. Reference Data API maximum 2000 (values above 2000 fall back to 2000); market data APIs default 1000, maximum 2000 (as pageSize).
+    - name: page
+      description: Page to retrieve; numbering starts at 0 (Reference Data API). Market data APIs use pageNumber.
+  response_metadata:
+    fields: [pageSize, totalPages, pageNumber, totalElements, type, elementsInReponse]
+    links: ["_links.first", "_links.prev", "_links.next", "_links.last"]
+    note: _links prev/next only appear when applicable; type is always "page".
+  limits:
+    max_page_size: 2000
+    max_response_bytes: 10485760
+    over_limit_behavior: HTTP 502 — resubmit with a smaller size
+idempotency:
+  supported: false
+  note: No idempotency-key mechanism is documented; the public cloud APIs are read-only GET surfaces (ClearPort trade submission uses its own FIXML protocol).
+error_envelope:
+  shape: 'errorResponse: {code, message, fault name, reason, error detail}'
+  detail: errors/cme-group-problem-types.yml
+query_conventions:
+  reserved_characters: "/ # \\ < > and space must be percent-encoded; + is not supported (use ? as wildcard substitute); ? is a supported wildcard in Reference Data API queries"
+  wildcards: ["?"]
+rate_limits:
+  note: No numeric per-second ceilings published for the cloud REST APIs; protocol-level MPS caps apply to iLink/MDP. See rate-limits/cme-group-rate-limits.yml.
+environments:
+  production:
+    refdata: https://refdata.api.cmegroup.com/refdata/v3
+    market_data: https://markets.api.cmegroup.com
+    oauth_token: https://auth.cmegroup.com/as/token.oauth2
+  new_release:
+    refdata: https://refdata.api.uat.cmegroup.com/refdata/v3
+    oauth_token: https://authnr.cmegroup.com/as/token.oauth2
+  note: API ID credentials are environment-specific and cannot be used across environments.

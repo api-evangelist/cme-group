@@ -1,0 +1,37 @@
+generated: '2026-07-22'
+method: searched
+source: https://pypi.org/project/datamine/ + https://github.com/CMEGroupPublic
+notes: >-
+  CME Group's public first-party client code lives in the CMEGroupPublic GitHub
+  org (7 public repos). The DataMine Python package is published to PyPI as
+  "datamine". No first-party packages were found on npm, Maven Central, NuGet,
+  RubyGems, Packagist, crates.io, or pkg.go.dev. The github.com/cmegroup org
+  exists but has no public repositories.
+packages:
+  - language: python
+    registry: pypi
+    name: datamine
+    url: https://pypi.org/project/datamine/
+    install: pip install datamine
+    official: true
+    description: >-
+      CME Group DataMine Python package — loads your DataMine data-item catalog,
+      downloads purchased historical data items, and structures them into
+      Pandas dataframes.
+    source: https://github.com/CMEGroupPublic/datamine_python
+  - language: java
+    registry: github
+    name: CMESmartStreamonGCP-BinaryData
+    url: https://github.com/CMEGroupPublic/CMESmartStreamonGCP-BinaryData
+    install: git clone https://github.com/CMEGroupPublic/CMESmartStreamonGCP-BinaryData
+    official: true
+    description: >-
+      Sample Java implementation for consuming CME market data from CME Smart
+      Stream on Google Cloud Platform (binary data).
+  - language: jupyter
+    registry: github
+    name: CMESmartStream-on-GCP-Tutorial
+    url: https://github.com/CMEGroupPublic/CMESmartStream-on-GCP-Tutorial
+    install: git clone https://github.com/CMEGroupPublic/CMESmartStream-on-GCP-Tutorial
+    official: true
+    description: Tutorial notebooks for CME Smart Stream on Google Cloud Platform.

@@ -1,0 +1,32 @@
+generated: '2026-07-22'
+method: searched
+source: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457215780/CME+Reference+Data+API+Version+3
+notes: >-
+  CME Group's test surface is the "New Release" environment — a parallel
+  pre-production deployment with its own hosts and its own OAuth authorization
+  server. API ID credentials are environment-specific and cannot be used
+  across environments. Testing is strongly encouraged; certification is not
+  required for the cloud market data APIs. No magic test values are published.
+environments:
+  - name: New Release
+    purpose: client testing before production access
+    hosts:
+      - api: CME Reference Data API v3
+        base_url: https://refdata.api.uat.cmegroup.com/refdata/v3
+    oauth_token_endpoint: https://authnr.cmegroup.com/as/token.oauth2
+    credentials: >-
+      Separate OAuth API ID registered for the New Release environment via the
+      CME Customer Center; BrokerTec and EBS content additionally requires
+      entitlement by the Enterprise Access and Entitlements (EASE) team via the
+      New Release test registration forms.
+  - name: Production
+    hosts:
+      - api: CME Reference Data API v3
+        base_url: https://refdata.api.cmegroup.com/refdata/v3
+      - api: Market data APIs (FedWatch, Term SOFR, Greeks, Cross Currency)
+        base_url: https://markets.api.cmegroup.com
+    oauth_token_endpoint: https://auth.cmegroup.com/as/token.oauth2
+testing:
+  certification_required: false
+  testing_encouraged: true
+  onboarding: https://www.cmegroup.com/tools-information/webhelp/data-services-portal/Content/Onboarding%20CME%20Group%20Cloud-Based%20Market%20Data%20APIs.html

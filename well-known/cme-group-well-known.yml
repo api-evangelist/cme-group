@@ -1,0 +1,51 @@
+generated: '2026-07-22'
+method: searched
+source: live probes of cmegroup.com hosts
+notes: >-
+  www.cmegroup.com and dataservices.cmegroup.com sit behind bot protection
+  (403 / Incapsula challenge shells for all probed well-known paths, including
+  /.well-known/security.txt), so no security.txt could be verified. The
+  auth.cmegroup.com PingFederate authorization server publishes real, anonymous
+  OIDC discovery and RFC 8414 OAuth authorization-server metadata, saved
+  verbatim below. markets.api.cmegroup.com returns 404 for all well-known and
+  spec paths (API endpoints themselves respond 401 without a token).
+hosts:
+  - host: https://auth.cmegroup.com
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: cme-group-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: cme-group-oauth-authorization-server.json
+  - host: https://www.cmegroup.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        note: bot protection blocks anonymous fetch
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/ai-plugin.json
+        status: 403
+      - path: /llms.txt
+        status: 403
+  - host: https://dataservices.cmegroup.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        note: returns an Incapsula challenge HTML shell, not a real security.txt — not saved
+      - path: /.well-known/openid-configuration
+        status: 200
+        note: returns an Incapsula challenge HTML shell, not real OIDC metadata — not saved
+  - host: https://markets.api.cmegroup.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /openapi.json
+        status: 404
+      - path: /swagger.json
+        status: 404

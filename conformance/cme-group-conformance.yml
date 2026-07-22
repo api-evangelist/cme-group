@@ -1,0 +1,37 @@
+generated: '2026-07-22'
+method: searched
+source: https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX
+notes: >-
+  Standards conformance for CME Group's API surface, from published docs and
+  live authorization-server metadata. No public OpenAPI exists to derive from.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: OAuth 2.0 client-credentials documented for all cloud APIs; live token endpoint at auth.cmegroup.com/as/token.oauth2
+  - id: oauth2-authorization-server-metadata-rfc8414
+    conforms: true
+    evidence: anonymous /.well-known/oauth-authorization-server published at auth.cmegroup.com (saved in well-known/)
+  - id: oidc
+    conforms: true
+    evidence: /.well-known/openid-configuration published at auth.cmegroup.com (PingFederate) with authorization_code, id_token response types
+  - id: mutual-tls-client-auth-rfc8705
+    conforms: true
+    evidence: token_endpoint_auth_methods_supported includes tls_client_auth in RFC 8414 metadata
+  - id: pagination
+    conforms: true
+    evidence: documented page/size (Reference Data API, max 2000, HAL-style _links first/prev/next/last) and pageSize/pageNumber metadata (market data APIs)
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: errors use a custom errorResponse JSON envelope, not application/problem+json
+  - id: fix-protocol
+    conforms: true
+    evidence: iLink order entry is FIX-based and ClearPort trade submission uses FIXML per CME Client Systems Wiki
+  - id: fix-sbe
+    conforms: true
+    evidence: MDP 3.0 market data feed uses FIX Simple Binary Encoding per CME Client Systems Wiki
+  - id: idempotency
+    conforms: false
+    evidence: no idempotency-key contract documented; public cloud APIs are read-only GET
+  - id: fapi
+    conforms: false
+    evidence: no FAPI conformance claim published
