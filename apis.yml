@@ -14,6 +14,19 @@ tags:
   - Trading
   - Fortune 1000
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cme-group.png
 access: 3rd-Party
 created: '2026-03-23'
