@@ -31,7 +31,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cme-group.
 access: 3rd-Party
 created: '2026-03-23'
 modified: '2026-07-22'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >-
   CME Group is the world's largest derivatives exchange and operator of the CME, CBOT,
   NYMEX, and COMEX markets, offering futures and options across interest rates, equity
