@@ -46,6 +46,12 @@ apis:
     name: CME Reference Data API
     tags:
       - Instruments
+      - Authentication
+      - Product
+      - Reference Data
+      - REST
+    tags_raw:
+      - Instruments
       - OAuth
       - Products
       - Reference Data
