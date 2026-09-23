@@ -1,7 +1,9 @@
 ---
 title: CME Group and Silicon Data Launch Compute Futures ...
 url: https://www.linkedin.com/posts/carmenrli_today-were-announcing-that-cme-group-and-activity-7460040679461679106-zsyL
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"CME Group" press release artificial intelligence'
 position: 3
 source: serpapi-google

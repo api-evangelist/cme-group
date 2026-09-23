@@ -1,7 +1,9 @@
 ---
 title: 'CME Group''s AI Strategy: Analysis of Dominance in ...'
 url: https://www.klover.ai/cme-group-ai-strategy-analysis-of-dominance-in-financial-ai-commodities/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"CME Group" press release artificial intelligence'
 position: 5
 source: serpapi-google

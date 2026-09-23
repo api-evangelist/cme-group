@@ -1,7 +1,9 @@
 ---
 title: Market data policy education center
 url: https://www.cmegroup.com/market-data/license-data/market-data-policy-education-center.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"CME Group" press release artificial intelligence'
 position: 4
 source: serpapi-google
