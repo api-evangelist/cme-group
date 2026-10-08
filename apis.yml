@@ -266,6 +266,12 @@ apis:
       - name: Broker Workflow Automation
         description: Automate trade-capture-to-clearing workflows for OTC products.
 common:
+  - type: Plans
+    url: plans/cme-group-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cme-group-rate-limits.yml
+  - type: FinOps
+    url: finops/cme-group-finops.yml
   - type: DomainSecurity
     url: security/cme-group-domain-security.yml
   - type: GitHubOrganization
