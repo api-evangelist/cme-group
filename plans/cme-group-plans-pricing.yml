@@ -124,3 +124,40 @@ plans:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - seat
+  - subscription
+  units:
+  - object
+  - period
+  - seat
+  plans:
+  - name: Market Data — Distributor / Vendor
+    access: enterprise
+    model: seat
+    model_how: derived
+    units:
+    - period
+    - seat
+    periods:
+    - month
+  - name: CME DataMine
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - object
+    periods:
+    - per-use
+  - name: iLink Connectivity
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - object
+    periods:
+    - month
