@@ -220,6 +220,10 @@ apis:
   - aid: cme-group:eurusd-basis-api
     name: EUR/USD Cross Currency Basis Index API
     tags:
+      - Foreign Exchange
+      - Index
+      - REST
+    tags_raw:
       - FX
       - Index
       - REST
