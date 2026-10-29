@@ -1,4 +1,4 @@
-# CME Group (cme-group)
+# CME Group
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,84 +64,127 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-CME Group is the world's largest derivatives exchange and operator of the CME, CBOT, NYMEX, and COMEX markets, offering futures and options across interest rates, equity indexes, foreign exchange, energy, agricultural products, and metals. CME Group exposes a portfolio of REST and streaming APIs through its Data Services Portal — including CME Reference Data API, Real-Time Futures and Options Data API, CME Term SOFR API, FedWatch API, Greeks and Implied Volatility API, EUR/USD Cross Currency Basis Index API, the CME ClearPort API for OTC trade submission, and iLink/MDP 3.0 connectivity to CME Globex for execution and market data.
+CME Group is the world's largest derivatives exchange and operator of the CME, CBOT, NYMEX, and COMEX markets, offering futures and options across interest rates, equity indexes, foreign exchange, energy, agricultural products, and metals. CME Group exposes a portfolio of REST and streaming APIs through its Data Services Portal - including CME Reference Data API, Real-Time Futures and Options Data API, CME Term SOFR API, FedWatch API, Greeks and Implied Volatility API, EUR/USD Cross Currency Basis Index API, the CME ClearPort API for OTC trade submission, and iLink/MDP 3.0 connectivity to CME Globex for execution and market data.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/cme-group/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cme-group/refs/heads/main/apis.yml)
+**Areas:** Capital Markets · Derivatives · Exchange · Financial Markets · Futures · Market Data · Options · Reference Data · Trading · Fortune 1000
 
-## Scope
+## CME Group on APIs.io
 
-- **Type:** Index
-- **x-type:** company
-- **Access:** 3rd-Party
+Everything profiled for CME Group is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cme-group/](https://apis.io/providers/cme-group/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Capital Markets
-- Derivatives
-- Exchange
-- Financial Markets
-- Futures
-- Market Data
-- Options
-- Reference Data
-- Trading
+- [CME Reference Data API](https://apis.io/apis/cme-group/cme-reference-data-api/) — A set of JSON RESTful web service APIs that provide access to product and instrument reference data for CME Group, BrokerTec, EBS, hosted partners, and CME…
+- [Real-Time Futures and Options Data API](https://apis.io/apis/cme-group/real-time-futures-options-api/) — Real-time market data API delivering futures and options price, volume, and open-interest information across CME Group markets. Available via REST and…
+- [CME Term SOFR API](https://apis.io/apis/cme-group/cme-term-sofr-api/) — JSON-over-REST API delivering CME Term SOFR Reference Rates - the IOSCO-compliant forward-looking term Secured Overnight Financing Rate at 1-month, 3-month,…
+- [CME FedWatch API](https://apis.io/apis/cme-group/fedwatch-api/) — REST API exposing the data behind the CME FedWatch Tool: market-implied probabilities of FOMC rate-change decisions derived from 30-Day Fed Funds futures…
+- [Greeks and Implied Volatility API](https://apis.io/apis/cme-group/greeks-iv-api/) — REST API delivering CME-calculated option Greeks (delta, gamma, vega, theta, rho) and implied volatility surfaces for CME Group options markets. JSON…
+- [EUR/USD Cross Currency Basis Index API](https://apis.io/apis/cme-group/eurusd-basis-api/) — JSON-over-REST API delivering the CME-administered EUR/USD Cross Currency Basis Index with real-time updates and full history.
+- [CME ClearPort API](https://apis.io/apis/cme-group/cme-clearport-api/) — The CME ClearPort API enables electronic submission of bilaterally negotiated OTC trades for clearing through CME ClearPort. Used by brokers, exchanges, and…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-23
-- **Modified:** 2026-04-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (3)
 
-### CME Reference Data API
-JSON-RESTful APIs for product and instrument reference data across CME Group, BrokerTec, EBS, hosted partners, and CME Group-cleared markets. OAuth-secured.
+Authentication, trust centre, and vulnerability disclosure.
 
-**Human URL:** [https://www.cmegroup.com/trading/market-tech-and-data-services/cme-reference-data-api.html](https://www.cmegroup.com/trading/market-tech-and-data-services/cme-reference-data-api.html)
+- [Cme Group Authentication](https://apis.io/security/cme-group/cme-group-authentication/)
+- [Cme Group Domain Security](https://apis.io/security/cme-group/cme-group-domain-security/)
+- [Cme Group Vulnerability Disclosure](https://apis.io/security/cme-group/cme-group-vulnerability-disclosure/)
 
-### Real-Time Futures and Options Data API
-Real-time market data for CME Group futures and options via REST and WebSocket on a monthly subscription basis.
+#### OAuth scopes (1)
 
-**Human URL:** [https://www.cmegroup.com/market-data/real-time-futures-and-options-data-api.html](https://www.cmegroup.com/market-data/real-time-futures-and-options-data-api.html)
+The permissions the API asks for.
 
-### CME Term SOFR API
-Forward-looking Term SOFR reference rates (1M, 3M, 6M, 12M) delivered in JSON over REST.
+- [Cme Group Scopes](https://apis.io/scopes/cme-group/cme-group-scopes/)
 
-**Human URL:** [https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html](https://www.cmegroup.com/market-data/cme-group-benchmark-administration/term-sofr.html)
+#### Plans and pricing (1)
 
-### CME FedWatch API
-REST API exposing market-implied probabilities of FOMC rate-change decisions derived from 30-Day Fed Funds futures pricing.
+Published plans, tiers and prices.
 
-**Human URL:** [https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html](https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html)
+- [Cme Group Plans Pricing](https://apis.io/plans/cme-group/cme-group-plans-pricing/)
 
-### Greeks and Implied Volatility API
-CME-calculated option Greeks (delta, gamma, vega, theta, rho) and implied volatility surfaces for CME Group options markets.
+#### Rate limits (1)
 
-**Human URL:** [https://www.cmegroup.com/market-data/market-data-api.html](https://www.cmegroup.com/market-data/market-data-api.html)
+Published request limits.
 
-### EUR/USD Cross Currency Basis Index API
-JSON-over-REST API delivering the CME-administered EUR/USD Cross Currency Basis Index with real-time updates and full history.
+- [Cme Group Rate Limits](https://apis.io/rate-limits/cme-group/cme-group-rate-limits/)
 
-**Human URL:** [https://www.cmegroup.com/market-data/market-data-api.html](https://www.cmegroup.com/market-data/market-data-api.html)
+#### FinOps (1)
 
-### CME ClearPort API
-Electronic submission of bilaterally negotiated OTC trades for clearing through CME ClearPort.
+What the API costs to run, by operation.
 
-**Human URL:** [https://www.cmegroup.com/clearport/clearport-api.html](https://www.cmegroup.com/clearport/clearport-api.html)
+- [Cme Group Finops](https://apis.io/finops/cme-group/cme-group-finops/)
 
-## Common Properties
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.cmegroup.com)
-- [Market Data APIs](https://www.cmegroup.com/market-data/market-data-api.html)
-- [CME Data Services Portal](https://dataservices.cmegroup.com/pages/CME-Data-Via-API)
-- [Client Systems Wiki](https://cmegroupclientsite.atlassian.net/wiki/display/EPICSANDBOX)
-- [Privacy Policy](https://www.cmegroup.com/privacy-policy.html)
-- [Disclaimer](https://www.cmegroup.com/disclaimer.html)
-- [OpenMarkets Blog](https://www.cmegroup.com/openmarkets.html)
-- [X](https://twitter.com/CMEGroup)
-- [LinkedIn](https://www.linkedin.com/company/cme-group/)
+- [Documentation](https://cmegroupclientsite.atlassian.net/wiki/display/EPICSANDBOX)
+- [Getting started](https://www.cmegroup.com/tools-information/webhelp/data-services-portal/Content/Onboarding%20CME%20Group%20Cloud-Based%20Market%20Data%20APIs.html)
+- [API reference](https://cmegroupclientsite.atlassian.net/wiki/display/EPICSANDBOX)
+- [Sign up](https://login.cmegroup.com/sso/register/)
+- [Support](https://www.cmegroup.com/contact-us.html)
+- [Blog](https://www.cmegroup.com/openmarkets.html)
+- [Security](https://hackerone.com/cmegroup)
+- [Terms of service](https://www.cmegroup.com/disclaimer.html)
+- [Privacy policy](https://www.cmegroup.com/privacy-policy.html)
+- [GitHub](https://github.com/CMEGroupPublic)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 40.5** — developing · rubric 0.25.0 · scored 2026-10-23
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 71.4 |
+| Access clarity | 42.1 |
+
+**Agent readiness 18.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 50.9** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cme-group/](https://apis.io/providers/cme-group/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for CME Group: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cme-group/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
