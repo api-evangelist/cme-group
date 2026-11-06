@@ -42,7 +42,7 @@ accessModel:
   - scopes
   - security
   - sandbox
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cme-group.png
 access: 3rd-Party
